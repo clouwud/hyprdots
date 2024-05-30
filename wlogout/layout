@@ -1,0 +1,37 @@
+{
+    "label" : "lock",
+    "action" : "sleep 0.35 && swaylock",
+    "text" : "Lock",
+    "keybind" : "l"
+}
+{
+    "label" : "logout",
+    "action" : "hyprctl dispatch exit && echo '\n'",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "pcirescan",
+    "action" : "kitty pcirescan",
+    "text" : "PCI",
+    "keybind" : "z"
+}
+{
+    "label" : "update",
+    "action" : "kitty yay",
+    "text" : "Update",
+    "keybind" : "u"
+}
+
