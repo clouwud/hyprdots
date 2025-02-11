@@ -1,0 +1,47 @@
+#!/bin/sh
+
+#### Change "~/Downloads/wallpapers/" to the folder/directory you keep you wallpaper images.
+
+wall=$(find ~/Pictures/wallpapers/ -type f -name "*.jpg" -o -name "*.png" -o -name "*.gif" | shuf -n 1)
+
+swww kill
+swww init
+
+# Picks background wallpaper
+swww img $wall
+# swww img $wall --transition-type center --transition-fps 60 
+
+# generate color scheme
+wal -c
+wal -i $wall
+
+# Extract pywal colors
+colors=($(cat ~/.cache/wal/colors))
+
+# Update cava config with pywal colors
+sed -i "s/gradient_color_1 =.*/gradient_color_1 = '${colors[1]}'/" ~/.config/cava/config
+sed -i "s/gradient_color_2 =.*/gradient_color_2 = '${colors[2]}'/" ~/.config/cava/config
+sed -i "s/gradient_color_3 =.*/gradient_color_3 = '${colors[3]}'/" ~/.config/cava/config
+sed -i "s/gradient_color_4 =.*/gradient_color_4 = '${colors[4]}'/" ~/.config/cava/config
+sed -i "s/gradient_color_5 =.*/gradient_color_5 = '${colors[5]}'/" ~/.config/cava/config
+sed -i "s/gradient_color_6 =.*/gradient_color_6 = '${colors[6]}'/" ~/.config/cava/config
+sed -i "s/gradient_color_7 =.*/gradient_color_7 = '${colors[7]}'/" ~/.config/cava/config
+sed -i "s/gradient_color_8 =.*/gradient_color_8 = '${colors[8]}'/" ~/.config/cava/config
+
+# Restart cava
+pkill -USR1 cava
+
+# wofi update
+# wofi-pywal
+
+# dunst update
+# dunst-theme
+
+# Enable this (by removing the # next to pywalfox update) if you use firefox AND downloaded the pywalfox extension and installed repository.
+pywalfox update
+
+# Deletes the sww cache
+rm -rf $HOME/.cache/swww
+
+# welcomer
+notify-send "heyy welcome!" 

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+ARCHIVE="zsh
+neovim
+hyprland
+waybar
+scripts
+"
+DMENUCHOICE=$(printf "$ARCHIVE" | wofi --dmenu --prompt="edit:")
+
+case $DMENUCHOICE in
+    neovim) kitty -e nvim $HOME/.config/nvim/init.lua ;;
+    # nushell) kitty -e nvim $HOME/.config/nushell/config.nu ;;
+    zsh) kitty -e nvim $HOME/.zshrc ;;
+    hyprland) kitty -e nvim $HOME/.config/hypr/hyprland.conf ;;
+    waybar) kitty -e nvim $HOME/.config/waybar/config.jsonc;;
+    scripts) kitty -e nvim $HOME/.local/bin/ ;;
+esac

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Notify recording start
+notify-send "Recording Started" "Your recording has begun."
+
+# Get current date and time for the filename
+timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+
+# Define the output directory
+output_dir="$HOME/Videos/recorder/"
+
+# Record using wl-recorder and save the file with the timestamp in the name
+wf-recorder -a -f "$output_dir/recording_$timestamp.mp4"
+
+# Notify recording end
+notify-send "Recording Ended" "Your recording has finished."

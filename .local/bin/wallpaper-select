@@ -1,0 +1,35 @@
+#!/bin/sh
+set -e
+WALLPAPER_PATH="$HOME/Pictures/wallpapers/"
+DMENU="$(ls $WALLPAPER_PATH | wofi --dmenu --prompt="Set Wallpaper:")"
+SELECTED="$WALLPAPER_PATH$DMENU"
+if [ -z "$DMENU"]; then
+	exit 0
+else
+  swww kill
+  swww init
+  # swww img $SELECTED --transition-type center --transition-fps 60 
+  swww img $SELECTED
+  wal -c
+  wal -i $SELECTED
+
+  # Extract pywal colors
+  colors=($(cat ~/.cache/wal/colors))
+
+  # Update cava config with pywal colors
+  sed -i "s/gradient_color_1 =.*/gradient_color_1 = '${colors[1]}'/" ~/.config/cava/config
+  sed -i "s/gradient_color_2 =.*/gradient_color_2 = '${colors[2]}'/" ~/.config/cava/config
+  sed -i "s/gradient_color_3 =.*/gradient_color_3 = '${colors[3]}'/" ~/.config/cava/config
+  sed -i "s/gradient_color_4 =.*/gradient_color_4 = '${colors[4]}'/" ~/.config/cava/config
+  sed -i "s/gradient_color_5 =.*/gradient_color_5 = '${colors[5]}'/" ~/.config/cava/config
+  sed -i "s/gradient_color_6 =.*/gradient_color_6 = '${colors[6]}'/" ~/.config/cava/config
+  sed -i "s/gradient_color_7 =.*/gradient_color_7 = '${colors[7]}'/" ~/.config/cava/config
+  sed -i "s/gradient_color_8 =.*/gradient_color_8 = '${colors[8]}'/" ~/.config/cava/config
+
+  # Restart cava
+  pkill -USR1 cava
+
+  pywalfox update
+  rm -rf $HOME/.cache/swww
+  notify-send "Enjoy your new colorscheme!"
+fi
