@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Directory containing the scripts
-SCRIPTS_DIR="$HOME/.local/bin"
+SCRIPTS_DIR="$HOME/.local/bin/"
 
 # Get a list of executable scripts in the directory
 SCRIPTS=$(find "$SCRIPTS_DIR" -maxdepth 1 -type f -executable -exec basename {} \;)

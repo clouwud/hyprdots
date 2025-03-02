@@ -8,8 +8,8 @@ if [ -z "$DMENU"]; then
 else
   swww kill
   swww init
-  # swww img $SELECTED --transition-type center --transition-fps 60 
-  swww img $SELECTED
+  swww img $SELECTED --transition-type center --transition-fps 60 
+  # swww img $SELECTED
   wal -c
   wal -i $SELECTED
 
