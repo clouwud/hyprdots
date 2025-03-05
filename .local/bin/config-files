@@ -6,7 +6,8 @@ hyprland
 waybar
 scripts
 "
-DMENUCHOICE=$(printf "$ARCHIVE" | wofi --dmenu --prompt="edit:")
+# DMENUCHOICE=$(printf "$ARCHIVE" | wofi --dmenu --prompt="edit:")
+DMENUCHOICE=$(printf "$ARCHIVE" | rofi -dmenu -prompt="edit:")
 
 case $DMENUCHOICE in
     neovim) kitty -e nvim $HOME/.config/nvim/init.lua ;;

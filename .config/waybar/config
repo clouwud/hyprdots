@@ -1,0 +1,112 @@
+{
+	"layer": "top",
+	"modules-left": ["custom/launcher", "backlight", "wireplumber"],
+	"modules-center": ["hyprland/workspaces"],
+	"modules-right": ["network", "cpu", "memory", "battery", "clock"],
+	
+  "wireplumber": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 {volume}%",
+    "on-click":"kitty -- alsamixer -V all",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+
+
+  "network": {
+    "tooltip": false,
+    "format-wifi": "  {essid}",
+    "format-ethernet": "",
+    "on-click":"kitty -e nmtui",
+	},
+
+
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+        "on-scroll-up": "light -A 5",
+		"on-scroll-down": "light -U 5"
+	},
+
+
+  "battery": {
+      "states": {
+          "full": 100,
+          "good": 95,
+          "decent": 50,
+          "warning": 30,
+          "critical": 20
+      },
+      "format": "{icon}  {capacity}%",
+      "format-time": "{H} h {M} min",
+      "format-alt": "{icon} {time}",
+      "format-icons": ["", "", "", "", ""]
+  },
+
+
+  "clock": {
+      "format": "{:%H:%M}",
+      "format-alt": "{:%m-%d-%Y}"
+  },
+
+
+  "cpu": {
+      "interval": 15,
+      "format": "  {}%",
+      "max-length": 10,
+      "on-click":"kitty -e btm"
+  },
+
+
+  "memory": {
+      "interval": 30,
+      "format": "  {}%",
+      "max-length": 10
+  },
+
+
+  "custom/media": {
+      "interval": 30,
+      "format": "{icon} {}",
+      "return-type": "json",
+      "max-length": 20,
+      "format-icons": {
+          "spotify": " ",
+          "default": " "
+      },
+      "escape": true,
+      "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
+      "on-click": "playerctl play-pause"
+  },
+
+
+  "custom/launcher":{
+      "format": " ",
+      "on-click": "sh ~/.config/rofi/launchers/type-2/launcher.sh",
+      "on-click-right": "killall rofi"
+  },
+
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "壹",
+      "2": "貳",
+      "3": "參",
+      "4": "肆",
+      "5": "伍",
+      "6": "陸",
+      "7": "柒",
+      "8": "捌",
+      "9": "玖",
+      "10": "拾",
+    },
+    "active": "",
+    "sort-by-number": true
+  },
+}

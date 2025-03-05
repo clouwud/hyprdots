@@ -1,0 +1,8 @@
+/**
+ * Fonts
+ *
+ **/
+
+* {
+    font: "JetBrains Mono Nerd Font 12";
+}

@@ -7,7 +7,8 @@ SCRIPTS_DIR="$HOME/.local/bin/"
 SCRIPTS=$(find "$SCRIPTS_DIR" -maxdepth 1 -type f -executable -exec basename {} \;)
 
 # Use wofi to display the list of scripts
-SELECTED=$(echo "$SCRIPTS" | wofi --dmenu --prompt="Select a script to run:")
+# SELECTED=$(echo "$SCRIPTS" | wofi --dmenu --prompt="Select a script to run:")
+SELECTED=$(echo "$SCRIPTS" | rofi -dmenu -prompt="Select a script to run:")
 
 # Check if something was selected
 if [ -n "$SELECTED" ]; then
