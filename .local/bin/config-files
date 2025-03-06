@@ -3,6 +3,12 @@
 ARCHIVE="zsh
 neovim
 hyprland
+general
+binds
+env
+input
+rules
+monitor
 waybar
 scripts
 "
@@ -14,6 +20,12 @@ case $DMENUCHOICE in
     # nushell) kitty -e nvim $HOME/.config/nushell/config.nu ;;
     zsh) kitty -e nvim $HOME/.zshrc ;;
     hyprland) kitty -e nvim $HOME/.config/hypr/hyprland.conf ;;
+    general) kitty -e nvim $HOME/.config/hypr/modules/general.conf;;
+    binds) kitty -e nvim $HOME/.config/hypr/modules/binds.conf ;;
+    env) kitty -e nvim $HOME/.config/hypr/modules/env.conf ;;
+    input) kitty -e nvim $HOME/.config/hypr/modules/input.conf ;;
+    rules) kitty -e nvim $HOME/.config/hypr/modules/rules.conf ;;
+    monitor) kitty -e nvim $HOME/.config/hypr/modules/monitors.conf ;;
     waybar) kitty -e nvim $HOME/.config/waybar/config.jsonc;;
     scripts) kitty -e nvim $HOME/.local/bin/ ;;
 esac
