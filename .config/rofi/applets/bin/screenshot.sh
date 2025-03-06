@@ -8,7 +8,8 @@ theme="$type/$style"
 
 # Theme Elements
 prompt='Screenshot'
-mesg="DIR: `xdg-user-dir PICTURES`/Screenshots"
+# mesg="DIR: `xdg-user-dir PICTURES`/Screenshots"
+mesg="DIR: /home/daksh/Pictures/screenshots"
 
 if [[ "$theme" == *'type-1'* ]]; then
 	list_col='1'
