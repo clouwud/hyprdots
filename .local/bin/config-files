@@ -26,6 +26,6 @@ case $DMENUCHOICE in
     input) kitty -e nvim $HOME/.config/hypr/modules/input.conf ;;
     rules) kitty -e nvim $HOME/.config/hypr/modules/rules.conf ;;
     monitor) kitty -e nvim $HOME/.config/hypr/modules/monitors.conf ;;
-    waybar) kitty -e nvim $HOME/.config/waybar/config.jsonc;;
+    waybar) kitty -e nvim $HOME/.config/waybar/config;;
     scripts) kitty -e nvim $HOME/.local/bin/ ;;
 esac

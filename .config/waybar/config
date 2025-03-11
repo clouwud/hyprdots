@@ -53,6 +53,10 @@
       "format-alt": "{:%m-%d-%Y}"
   },
 
+  
+  "tray": {
+      "spacing": 10,
+  },
 
   "cpu": {
       "interval": 15,
