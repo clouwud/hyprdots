@@ -142,11 +142,13 @@ alias hx="helix"
 alias zz="zellij"
 alias battery="bat /sys/class/power_supply/BAT1/capacity"
 
-# lsd ls
-alias ls="lsd"
+# eza ls 
+alias eza="eza --icons"
+alias ls="eza"
 alias l="ls -l"
+alias ll="ls -l"
 alias la="ls -a"
-alias lla="ls -la"
+alias lla="ls -la --header"
 alias lt="ls --tree"
 
 # cd back
