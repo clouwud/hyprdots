@@ -1,17 +1,29 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "600614a"
-hash = "882ed23839778f82dc137248979c8681"
+rev = "b12a9ab"
+hash = "1f3dad061209081a6b04dd6ff2cb06c7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:jump-to-char"
-rev = "600614a"
-hash = "72c66a0b3d60f8377eb9db5e1d8b60b2"
+rev = "b12a9ab"
+hash = "a670c03eb3760812e044a24f94cedc55"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:sudo-demo"
-rev = "600614a"
-hash = "99b7ec80ba0ce504e1d8e5036e425d95"
+use = "pirafrank/what-size"
+rev = "f1c6b69"
+hash = "6e789212eb41d937bab04877ca361099"
 
-[flavor]
-deps = []
+[[plugin.deps]]
+use = "Ape/simple-status"
+rev = "d0da104"
+hash = "68603fdd1dcaf415227e2c77a9317947"
+
+[[plugin.deps]]
+use = "llanosrocas/yaziline"
+rev = "1342efe"
+hash = "a84a339953a568fee1d8beb63e6dca73"
+
+[[flavor.deps]]
+use = "bennyyip/gruvbox-dark"
+rev = "b4cc9f2"
+hash = "f44c42bcbed3c8564100e45e2fe3649a"
