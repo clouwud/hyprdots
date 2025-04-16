@@ -5,7 +5,8 @@ require("full-border"):setup({
 
 -- require("simple-status"):setup()
 require("yaziline"):setup({
-	color = "#98c379", -- main theme color
+	-- color = "#98c379", -- main theme color
+	color = "#83A598",
 	default_files_color = "darkgray", -- color of the file counter when it's inactive
 	selected_files_color = "white",
 	yanked_files_color = "green",
